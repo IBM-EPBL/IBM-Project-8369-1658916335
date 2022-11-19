@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Result</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='cssstyle.css')}}">
+        <style>
+            .result{
+                color:white
+                }
+                .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+        </style>
+    </head>
+    <body>
+
+    <h1 align="center" class="h1">SMART LENDER PREDICTION</h1>
+
+    <div style="display:flex;align-items:center;justify-content:center;height:100vh;position: relative;text-align: center;">
+        <img src="{{url_for('static',filename='lender.jpg')}}" id="img">
+        {% if output == 0 %}
+        <div style="width:50vh" class="centered">
+            <h4 class="result" style="background-color:green;padding:50px;margin:30px">Congratulations, You are eligible to get a Loan</h4>
+            <a href="/login" style="background-color:white; padding:10px;text-decoration:none">Logout</a>
+        </div>
+        {%else%}
+        <div style="width:50vh" class="centered">
+            <h4 class="result" style="background-color:red;padding:50px;margin:30px">Sorry, You are not eligible to get a Loan</h4>
+            <a href="/login" style="background-color:white; padding:10px;text-decoration:none">Logout</a>
+        </div>
+        {% endif %}
+
+
+    </div>
+    </body>
+
+</html>

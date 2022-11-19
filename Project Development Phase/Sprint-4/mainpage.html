@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{url_for('static',filename='cssstyle.css')}}">
+  
+</head>
+
+<body><h1 align="center">SMART LENDER</H1>
+ <img src="{{url_for('static',filename='lender.jpg')}}" id="img">
+ <div class="login">
+	
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+       Income<input type="number" name="name" placeholder="Income" required="required" />
+       Age<input type="number" name="Age" placeholder="Age" required="required" min="21" max="70" />
+       Experience<input type="number" name="experience" required="required"/>
+       
+        Marital Status<select name="Select1" class="origin" id="drop">
+       <option value='0'>Single</option>
+      <option value='1'>Married</option>
+    </select><br><br>
+
+      House Ownership<select name="Select2" class="dest" id="drop">
+      <option value='2'>Own</option>
+      <option value='1'>Rented</option>
+      <option value='0'>No_rent_no_own</option>
+    </select><br><br>
+
+     Car ownership <select name="Select3" class="origin" id="drop">
+       <option value='1'>yes</option>
+      <option value='0'>no</option>
+    </select><br><br>
+       Currrent job years<input type="number" name="cjob" required="required"/>
+
+       Current house years<input type="number" name="chouse"  required="required"/>
+
+       Profession <select name="Select4" class="dest" id="drop">
+      <option value='1'>computer_science</option>
+      <option value='2'>Engineering</option>
+      <option value='3'>Medical</option>
+      <option value='4'>Finance</option>
+      <option value='5'>Arts</option>
+      <option value='6'>Government</option>
+      <option value='7'>Others</option>
+      <option value='8'>Defence</option>
+    </select><br>
+
+
+	          <button type="submit" class="btn btn-primary btn-block">Check</button>
+    </form>
+
+   <br>
+   <br>
+
+   <br>
+
+ </div>
+
+
+</body>
+</html>
